@@ -3,34 +3,34 @@ import Phaser from 'phaser';
 // import SceneMain from './SceneMain';
 // import SceneGameOver from './SceneGameOver';
 
-const shooter_game = () => {
-  var config = {
+const shooterGame = () => {
+  const config = {
     type: Phaser.AUTO,
     width: 800,
     height: 600,
-    backgroundColor: "black",
+    backgroundColor: 'black',
     physics: {
-      default: "arcade",
+      default: 'arcade',
       arcade: {
-        gravity: { x: 0, y: 0 }
-      }
+        gravity: { x: 0, y: 0 },
+      },
     },
     // scene: [
     //   SceneMainMenu,
     //   SceneMain,
     //   SceneGameOver
     // ],
-  
+
     parent: '#container',
     dom: {
       createContainer: true,
     },
-  
+
     autoCenter: true,
     pixelArt: true,
-    roundPixels: true
+    roundPixels: true,
   };
-    return new Phaser.Game(config);
-}
+  return new Phaser.Game(config);
+};
 
-export default shooter_game;
+export default shooterGame;

@@ -1,5 +1,5 @@
-// import shooter_game from '../src/js/Game';
-import createUser from '../api/api';
+import shooterGame from '../scenes/game';
+import createUser from '../api/user';
 
 const initializeGame = () => {
   const container = document.createElement('div');
@@ -39,7 +39,7 @@ const initializeGame = () => {
       localStorage.setItem('playerName', JSON.stringify(formInput.value));
       localStorage.setItem('userId', JSON.stringify(userId));
       container.remove();
-      // shooter_game();
+      shooterGame();
     } catch (error) {
       throw new Error(error);
     } finally {
