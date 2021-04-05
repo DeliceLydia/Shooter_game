@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/no-unresolved
+import './stylesheets/style.css';
 import initializeGame from './views/initialize';
 import ShooterGame from './scenes/game';
 
