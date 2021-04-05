@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
-// import SceneMainMenu from './SceneMainMenu';
-// import SceneMain from './SceneMain';
-// import SceneGameOver from './SceneGameOver';
+import SceneMainMenu from './sceneMainMenu';
+import SceneMain from './sceneMain';
+import SceneGameOver from './sceneGameOver';
 
 const shooterGame = () => {
   const config = {
@@ -15,11 +15,11 @@ const shooterGame = () => {
         gravity: { x: 0, y: 0 },
       },
     },
-    // scene: [
-    //   SceneMainMenu,
-    //   SceneMain,
-    //   SceneGameOver
-    // ],
+    scene: [
+      SceneMainMenu,
+      SceneMain,
+      SceneGameOver,
+    ],
 
     parent: '#container',
     dom: {
