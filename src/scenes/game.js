@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import Play from './play';
 import SceneMainMenu from './sceneMainMenu';
 import SceneMain from './sceneMain';
 import SceneGameOver from './sceneGameOver';
@@ -16,6 +17,7 @@ const shooterGame = () => {
       },
     },
     scene: [
+      Play,
       SceneMainMenu,
       SceneMain,
       SceneGameOver,
