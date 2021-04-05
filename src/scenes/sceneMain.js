@@ -13,12 +13,12 @@ import SndLaser from '../assets/sndLaser.wav';
 
 export default class SceneMain extends Phaser.Scene {
   constructor() {
-    super({ key: "SceneMain" });
+    super({ key: 'SceneMain' });
   }
 
   preload() {
-    this.load.image("sprBg0", SprBg0);
-    this.load.image("sprBg1", SprBg1);
+    this.load.image('sprBg0', SprBg0);
+    this.load.image('sprBg1', SprBg1);
     this.load.spritesheet('sprExplosion', SprExplosion, {
       frameWidth: 32,
       frameHeight: 32,
@@ -73,11 +73,10 @@ export default class SceneMain extends Phaser.Scene {
     });
     this.sfx = {
       explosions: [
-        this.sound.add("sndExplode0"),
-        this.sound.add("sndExplode1")
+        this.sound.add('sndExplode0'),
+        this.sound.add('sndExplode1'),
       ],
-      laser: this.sound.add("sndLaser")
+      laser: this.sound.add('sndLaser'),
     };
-    
   }
 }

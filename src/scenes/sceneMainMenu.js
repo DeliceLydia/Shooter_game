@@ -1,9 +1,33 @@
-class SceneMainMenu extends Phaser.Scene {
+import SprBg0 from '../assets/sprBg0.png';
+import SprBg1 from '../assets/sprBg1.png';
+import SprBtnPlay from '../assets/sprBtnPlay.png';
+import SprBtnPlayHover from '../assets/sprBtnPlayHover.png';
+import SprBtnPlayDown from '../assets/sprBtnPlayDown.png';
+import SprBtnRestart from '../assets/sprBtnRestart.png';
+import SprBtnRestartHover from '../assets/sprBtnRestartHover.png';
+import SprBtnRestartDown from '../assets/sprBtnRestartDown.png';
+import SndBtnOver from '../assets/sndBtnOver.wav';
+import SndBtnDown from '../assets/sndBtnDown.wav';
+
+export default class SceneMainMenu extends Phaser.Scene {
   constructor() {
-    super({ key: "SceneMainMenu" });
+    super({ key: 'SceneMainMenu' });
+  }
+
+  preload() {
+    this.load.image('sprBg0', SprBg0);
+    this.load.image('sprBg1', SprBg1);
+    this.load.image('sprBtnPlay', SprBtnPlay);
+    this.load.image('sprBtnPlayHover', SprBtnPlayHover);
+    this.load.image('sprBtnPlayDown', SprBtnPlayDown);
+    this.load.image('sprBtnRestart', SprBtnRestart);
+    this.load.image('sprBtnRestartHover', SprBtnRestartHover);
+    this.load.image('sprBtnRestartDown', SprBtnRestartDown);
+    this.load.audio('sndBtnOver', SndBtnOver);
+    this.load.audio('sndBtnDown', SndBtnDown);
   }
 
   create() {
-    this.scene.start("SceneMain");
+    this.scene.start('SceneMain');
   }
 }
