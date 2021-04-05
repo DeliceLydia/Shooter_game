@@ -9,7 +9,7 @@ export default class Play extends Phaser.GameObjects.Sprite {
   }
 }
 
-class Player extends Play {
+export defult class Player extends Play {
   constructor(scene, x, y, key) {
     super(scene, x, y, key, 'Player');
     this.setData('speed', 200);

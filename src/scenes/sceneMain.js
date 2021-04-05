@@ -78,5 +78,27 @@ export default class SceneMain extends Phaser.Scene {
       ],
       laser: this.sound.add('sndLaser'),
     };
+    this.player = new Player(
+      this,
+      this.game.config.width * 0.5,
+      this.game.config.height * 0.5,
+      'sprPlayer',
+    );
+  }
+
+  update() {
+    this.player.update();
+
+    if (this.keyW.isDown) {
+      this.player.moveUp();
+    } else if (this.keyS.isDown) {
+      this.player.moveDown();
+    }
+
+    if (this.keyA.isDown) {
+      this.player.moveLeft();
+    } else if (this.keyD.isDown) {
+      this.player.moveRight();
+    }
   }
 }
