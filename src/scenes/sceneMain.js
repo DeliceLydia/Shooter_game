@@ -71,6 +71,13 @@ export default class SceneMain extends Phaser.Scene {
       frameRate: 20,
       repeat: -1,
     });
+    this.sfx = {
+      explosions: [
+        this.sound.add("sndExplode0"),
+        this.sound.add("sndExplode1")
+      ],
+      laser: this.sound.add("sndLaser")
+    };
     
   }
 }
