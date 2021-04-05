@@ -18,6 +18,10 @@ module.exports = {
         type: 'asset/resource',
       },
       {
+        test: /\.(ogg|mp3|wav|mpe?g)$/i,
+        loader: 'file-loader',
+      },
+      {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
