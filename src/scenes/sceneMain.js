@@ -9,6 +9,7 @@ import Bomb from '../assets/bomb.png';
 import SprLaserPlayer from '../assets/sprLaserPlayer.png';
 import SprPlayer from '../assets/sprPlayer.png';
 import Player from '../models/player';
+import GunShip from '../models/gunship';
 
 export default class SceneMain extends Phaser.Scene {
   constructor() {
@@ -87,6 +88,22 @@ export default class SceneMain extends Phaser.Scene {
     this.keySpace = this.input.keyboard.addKey(
       Phaser.Input.Keyboard.KeyCodes.SPACE,
     );
+    this.enemies = this.add.group();
+    this.enemyLasers = this.add.group();
+    this.playerLasers = this.add.group();
+    this.time.addEvent({
+      delay: 100,
+      callback() {
+        const enemy = new GunShip(
+          this,
+          Phaser.Math.Between(0, this.game.config.width),
+          0,
+        );
+        this.enemies.add(enemy);
+      },
+      callbackScope: this,
+      loop: true,
+    });
   }
 
   update() {
