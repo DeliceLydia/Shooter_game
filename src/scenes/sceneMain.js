@@ -8,7 +8,7 @@ import SprEnemy2 from '../assets/sprEnemy2.png';
 import Bomb from '../assets/bomb.png';
 import SprLaserPlayer from '../assets/sprLaserPlayer.png';
 import SprPlayer from '../assets/sprPlayer.png';
-import Player from '../models/entities';
+import Player from '../models/player';
 
 export default class SceneMain extends Phaser.Scene {
   constructor() {
