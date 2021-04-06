@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-unresolved
 import './stylesheets/style.css';
 import initializeGame from './views/initialize';
-import ShooterGame from './scenes/game';
+import ShooterGame from './models/game';
 
 const user = JSON.parse(localStorage.getItem('playerName'));
 if (!user) {

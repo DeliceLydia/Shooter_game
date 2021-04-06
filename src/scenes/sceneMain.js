@@ -1,3 +1,4 @@
+import Phaser from 'phaser';
 import SprBg0 from '../assets/sprBg0.png';
 import SprBg1 from '../assets/sprBg1.png';
 import SprExplosion from '../assets/sprExplosion.png';
@@ -7,9 +8,7 @@ import SprEnemy2 from '../assets/sprEnemy2.png';
 import Bomb from '../assets/bomb.png';
 import SprLaserPlayer from '../assets/sprLaserPlayer.png';
 import SprPlayer from '../assets/sprPlayer.png';
-import SndExplode0 from '../assets/sndExplode0.wav';
-import SndExplode1 from '../assets/sndExplode1.wav';
-import SndLaser from '../assets/sndLaser.wav';
+import Player from '../models/entities';
 
 export default class SceneMain extends Phaser.Scene {
   constructor() {
@@ -38,9 +37,6 @@ export default class SceneMain extends Phaser.Scene {
       frameWidth: 16,
       frameHeight: 16,
     });
-    this.load.audio('sndExplode0', SndExplode0);
-    this.load.audio('sndExplode1', SndExplode1);
-    this.load.audio('sndLaser', SndLaser);
   }
 
   create() {
@@ -71,18 +67,25 @@ export default class SceneMain extends Phaser.Scene {
       frameRate: 20,
       repeat: -1,
     });
-    this.sfx = {
-      explosions: [
-        this.sound.add('sndExplode0'),
-        this.sound.add('sndExplode1'),
-      ],
-      laser: this.sound.add('sndLaser'),
-    };
+    // this.sfx = {
+    //   explosions: [
+    //     this.sound.add('sndExplode0'),
+    //     this.sound.add('sndExplode1'),
+    //   ],
+    //   laser: this.sound.add('sndLaser'),
+    // };
     this.player = new Player(
       this,
       this.game.config.width * 0.5,
       this.game.config.height * 0.5,
       'sprPlayer',
+    );
+    this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
+    this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
+    this.keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+    this.keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+    this.keySpace = this.input.keyboard.addKey(
+      Phaser.Input.Keyboard.KeyCodes.SPACE,
     );
   }
 

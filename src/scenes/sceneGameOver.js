@@ -1,6 +1,8 @@
-class SceneGameOver extends Phaser.Scene {
+import Phaser from 'phaser';
+
+export default class SceneGameOver extends Phaser.Scene {
   constructor() {
-    super({ key: "SceneGameOver" });
+    super({ key: 'SceneGameOver' });
   }
 
   create() {

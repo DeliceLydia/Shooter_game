@@ -1,8 +1,7 @@
 import Phaser from 'phaser';
-import Play from './play';
-import SceneMainMenu from './sceneMainMenu';
-import SceneMain from './sceneMain';
-import SceneGameOver from './sceneGameOver';
+import SceneMainMenu from '../scenes/sceneMainMenu';
+import SceneMain from '../scenes/sceneMain';
+import SceneGameOver from '../scenes/sceneGameOver';
 
 const shooterGame = () => {
   const config = {
@@ -17,7 +16,6 @@ const shooterGame = () => {
       },
     },
     scene: [
-      Play,
       SceneMainMenu,
       SceneMain,
       SceneGameOver,

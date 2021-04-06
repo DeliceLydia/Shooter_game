@@ -1,4 +1,4 @@
-import shooterGame from '../scenes/game';
+import shooterGame from '../models/game';
 import createUser from '../api/user';
 
 const initializeGame = () => {

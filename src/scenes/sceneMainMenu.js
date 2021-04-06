@@ -1,3 +1,4 @@
+import Phaser from 'phaser';
 import SprBg0 from '../assets/sprBg0.png';
 import SprBg1 from '../assets/sprBg1.png';
 import SprBtnPlay from '../assets/sprBtnPlay.png';
