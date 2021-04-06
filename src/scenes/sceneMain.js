@@ -8,6 +8,9 @@ import SprEnemy2 from '../assets/sprEnemy2.png';
 import Bomb from '../assets/bomb.png';
 import SprLaserPlayer from '../assets/sprLaserPlayer.png';
 import SprPlayer from '../assets/sprPlayer.png';
+import SndExplode0 from '../assets/sndExplode0.wav';
+import SndExplode1 from '../assets/sndExplode1.wav';
+import SndLaser from '../assets/sndLaser.wav';
 import Player from '../models/player';
 import GunShip from '../models/gunship';
 
@@ -38,6 +41,9 @@ export default class SceneMain extends Phaser.Scene {
       frameWidth: 16,
       frameHeight: 16,
     });
+    this.load.audio('sndExplode0', SndExplode0);
+    this.load.audio('sndExplode1', SndExplode1);
+    this.load.audio('sndLaser', SndLaser);
   }
 
   create() {
@@ -68,13 +74,13 @@ export default class SceneMain extends Phaser.Scene {
       frameRate: 20,
       repeat: -1,
     });
-    // this.sfx = {
-    //   explosions: [
-    //     this.sound.add('sndExplode0'),
-    //     this.sound.add('sndExplode1'),
-    //   ],
-    //   laser: this.sound.add('sndLaser'),
-    // };
+    this.sfx = {
+      explosions: [
+        this.sound.add('sndExplode0'),
+        this.sound.add('sndExplode1'),
+      ],
+      laser: this.sound.add('sndLaser'),
+    };
     this.player = new Player(
       this,
       this.game.config.width * 0.5,
@@ -119,6 +125,12 @@ export default class SceneMain extends Phaser.Scene {
       this.player.moveLeft();
     } else if (this.keyD.isDown) {
       this.player.moveRight();
+    }
+    if (this.keySpace.isDown) {
+      this.player.setData('isShooting', true);
+    } else {
+      this.player.setData('timerShootTick', this.player.getData('timerShootDelay') - 1);
+      this.player.setData('isShooting', false);
     }
   }
 }
