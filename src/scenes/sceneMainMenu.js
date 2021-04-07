@@ -38,5 +38,21 @@ export default class SceneMainMenu extends Phaser.Scene {
       this.game.config.height * 0.5,
       'sprBtnPlay',
     );
+    this.btnPlay.setInteractive();
+    this.btnPlay.on('pointerover', () => {
+      this.btnPlay.setTexture('sprBtnPlayHover');
+      this.sfx.btnOver.play();
+    }, this);
+    this.btnPlay.on('pointerout', () => {
+      this.setTexture('sprBtnPlay');
+    });
+    this.btnPlay.on('pointerdown', () => {
+      this.btnPlay.setTexture('sprBtnPlayDown');
+      this.sfx.btnDown.play();
+    }, this);
+    this.btnPlay.on('pointerup', () => {
+      this.btnPlay.setTexture('sprBtnPlay');
+      this.scene.start('SceneMain');
+    }, this);
   }
 }
