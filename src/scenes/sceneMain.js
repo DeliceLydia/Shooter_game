@@ -4,7 +4,7 @@ import SprBg1 from '../assets/sprBg1.png';
 import SprExplosion from '../assets/sprExplosion.png';
 import SprEnemy2 from '../assets/sprEnemy2.png';
 import Bomb from '../assets/bomb.png';
-import SprLaserPlayer from '../assets/sprLaserPlayer.png';
+import Bullet from '../assets/bullet.png';
 import Plane from '../assets/plane.png';
 import SndExplode0 from '../assets/sndExplode0.wav';
 import SndExplode1 from '../assets/sndExplode1.wav';
@@ -29,7 +29,7 @@ export default class SceneMain extends Phaser.Scene {
       frameHeight: 16,
     });
     this.load.image('bomb', Bomb);
-    this.load.image('sprLaserPlayer', SprLaserPlayer);
+    this.load.image('bullet', Bullet);
     this.load.spritesheet('plane', Plane, {
       frameWidth: 16,
       frameHeight: 16,
@@ -40,13 +40,6 @@ export default class SceneMain extends Phaser.Scene {
   }
 
   create() {
-    this.anims.create({
-      key: 'sprEnemy0',
-      frames: this.anims.generateFrameNumbers('sprEnemy0'),
-      frameRate: 20,
-      repeat: -1,
-    });
-
     this.anims.create({
       key: 'sprEnemy2',
       frames: this.anims.generateFrameNumbers('sprEnemy2'),
@@ -62,8 +55,8 @@ export default class SceneMain extends Phaser.Scene {
     });
 
     this.anims.create({
-      key: 'sprPlayer',
-      frames: this.anims.generateFrameNumbers('sprPlayer'),
+      key: 'plane',
+      frames: this.anims.generateFrameNumbers('plane'),
       frameRate: 20,
       repeat: -1,
     });

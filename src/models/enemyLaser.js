@@ -1,4 +1,3 @@
-// import Phaser from 'Phaser';
 import Entity from './entities';
 
 export default class EnemyLaser extends Entity {
