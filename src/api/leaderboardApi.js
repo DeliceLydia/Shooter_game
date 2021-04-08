@@ -1,4 +1,4 @@
-export const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/IeWR2bb5qDryHD6KKs3d/scores';
+export const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/wDawrtrANQH50ixnJVac/scores';
 
 const handleErrors = (response) => {
   if (!response.ok) {
