@@ -3,34 +3,27 @@ import SceneMainMenu from '../scenes/sceneMainMenu';
 import SceneMain from '../scenes/sceneMain';
 import SceneGameOver from '../scenes/sceneGameOver';
 
-const shooterGame = () => {
-  const config = {
-    type: Phaser.AUTO,
-    width: 800,
-    height: 600,
-    backgroundColor: 'black',
-    physics: {
-      default: 'arcade',
-      arcade: {
-        gravity: { x: 0, y: 0 },
-      },
+const config = {
+  type: Phaser.AUTO,
+  width: 800,
+  height: 600,
+  backgroundColor: 'black',
+  physics: {
+    default: 'arcade',
+    arcade: {
+      gravity: { y: 300 },
     },
-    scene: [
-      SceneMainMenu,
-      SceneMain,
-      SceneGameOver,
-    ],
+  },
+  scene: [SceneMainMenu, SceneMain, SceneGameOver],
 
-    parent: '#container',
-    dom: {
-      createContainer: true,
-    },
+  parent: '#container',
+  dom: {
+    createContainer: true,
+  },
 
-    autoCenter: true,
-    pixelArt: true,
-    roundPixels: true,
-  };
-  return new Phaser.Game(config);
+  autoCenter: true,
 };
 
-export default shooterGame;
+const game = new Phaser.Game(config);
+
+export default game;

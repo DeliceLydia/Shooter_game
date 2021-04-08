@@ -1,6 +1,4 @@
 import Phaser from 'phaser';
-import SprBg0 from '../assets/sprBg0.png';
-import SprBg1 from '../assets/sprBg1.png';
 import SprExplosion from '../assets/sprExplosion.png';
 import SprEnemy2 from '../assets/sprEnemy2.png';
 import Bomb from '../assets/bomb.png';
@@ -18,8 +16,6 @@ export default class SceneMain extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('sprBg0', SprBg0);
-    this.load.image('sprBg1', SprBg1);
     this.load.spritesheet('sprExplosion', SprExplosion, {
       frameWidth: 32,
       frameHeight: 32,
