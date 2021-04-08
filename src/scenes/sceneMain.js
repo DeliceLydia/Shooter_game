@@ -15,6 +15,10 @@ export default class SceneMain extends Phaser.Scene {
     super({ key: 'SceneMain' });
   }
 
+  init() {
+    this.score = 0;
+  }
+
   preload() {
     this.load.spritesheet('sprExplosion', SprExplosion, {
       frameWidth: 32,
