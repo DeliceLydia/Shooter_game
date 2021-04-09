@@ -3,6 +3,12 @@
 This project was about creating a shooter game using phaser library, the game
 have enemy and a player and each one of them has the ability to shoot when the player shoot enemy will get scores in the dashboard.
 
+![screenshot](./game.png)
+
+![screenshot](./shot.png)
+
+![screenshot](./scores.png)
+
 ## Getting Started
 
 * Clone this repo
@@ -23,8 +29,9 @@ have enemy and a player and each one of them has the ability to shoot when the p
 
 * Start the server by running ``` yarn run dev ```
    
-* Go to the browser and enter 
-    ```http://127.0.0.1:5500/dist/index.html``` and you are now able to visit the app
+* The server would usually start on port:3000
+
+* Enjoy the game
 
 ## How to play
 
@@ -37,6 +44,10 @@ have enemy and a player and each one of them has the ability to shoot when the p
 - To move left you will press A key
 - To move right you will press D key
 - As a player when you shoot enemy you will be scored as the game will be over
+
+## How to run tests
+
+- Yarn test
 
 ## Built with
 
@@ -63,6 +74,10 @@ have enemy and a player and each one of them has the ability to shoot when the p
 - Add your changes and commit the file
 - Push to your forked repo
 - Make a pull request to `develop` branch
+
+## Acknowledgments
+
+Credits goes to [York computer solutions LLC](https://learn.yorkcs.com/category/tutorials/gamedev/phaser-3/build-a-space-shooter-with-phaser-3/) for the space shooter game it helped me to design mine
 
 ## Show your support
 
