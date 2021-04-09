@@ -1,70 +1,44 @@
 import Phaser from 'phaser';
-import { url, postScores } from '../api/leaderboardApi';
-import SprBtnRestartHover from '../assets/sprBtnRestartHover.png';
+import leadershipBoard from '../views/leadershipBoard';
 
 export default class SceneGameOver extends Phaser.Scene {
   constructor() {
     super({ key: 'SceneGameOver' });
+    this.isGameOver = false;
+    this.score = 1;
+    this.scoreText = null;
   }
 
-  init(data) {
-    this.finalScore = data.score;
-  }
-
-  preload() {
-    this.load.image('sprBtnRestartHover', SprBtnRestartHover);
+  init({ score }) {
+    localStorage.setItem('userScore', JSON.stringify(score));
   }
 
   create() {
-    this.add
-      .text(this.scale.width * 0.5, this.scale.height * 0.1, 'Game Over', {
-        fontSize: 48,
-        color: '#f00',
-      })
-      .setOrigin();
-    this.add
-      .text(
-        this.scale.width * 0.5,
-        this.scale.height * 0.2,
-        `Final score: ${this.finalScore}`,
-        { fontSize: 24 },
-      )
-      .setOrigin();
-    // reset button
-    const resetButton = this.add
-      .image(
-        this.scale.width * 0.5,
-        this.scale.height * 0.5,
-        'sprBtnRestartHover',
-      )
-      .setScale(0.5);
-    resetButton.setInteractive({ useHandCursor: true });
-    resetButton.on('pointerdown', () => {
-      this.scene.start('SceneMain');
-    });
-    // submit score
-    const form = document.createElement('form');
-    form.innerHTML = `
-      <input type="text" name="name" placeholder="Enter your name" required minLength="3" maxLength="10" autofocus/>
-      <button type="submit">Submit</button>
-    `;
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const user = document.querySelector('input[name="name"]').value;
-      postScores(user, this.finalScore, url)
-        .then(() => {
-          this.scene.start('leaderboard');
-        })
-        .catch(() => {
-          this.add
-            .text(
-              this.scale.width * 0.5,
-              this.scale.height * 0.8,
-              'Network Error. Please try again later.',
-            )
-            .setOrigin();
-        });
-    });
-    this.add.dom(this.scale.width * 0.5, this.scale.height * 0.3, form);
+    this.init();
+    this.drawScore();
+  }
+
+  gameOver() {
+    this.isGameOver = true;
+    this.scene.start('SceneGameOver', { score: this.score });
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  drawScore() {
+    const text = 'Score: 1';
+    const style = {
+      font: '40px Roboto',
+      fill: '#FFFFFF',
+      align: 'center',
+      shadow: {
+        offsetX: 2,
+        offsetY: 2,
+        color: '#000',
+        blur: 2,
+        fill: true,
+      },
+    };
+    this.scoreText = this.add.text(0, 0, text, style);
+  }
   }
 }
