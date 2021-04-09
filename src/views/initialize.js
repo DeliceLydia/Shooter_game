@@ -7,7 +7,7 @@ const initializeGame = () => {
 
   const title = document.createElement('h1');
   title.classList.add('container-title');
-  title.textContent = 'Welcome to sky shooter game';
+  title.textContent = 'Welcome to the sky shooter game';
 
   const form = document.createElement('form');
   form.classList.add('play-form');
