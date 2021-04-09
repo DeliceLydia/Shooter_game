@@ -25,7 +25,7 @@ const shooterGame = () => {
     pixelArt: true,
     roundPixels: true,
   };
-  return Phaser.Game(config);
+  return new Phaser.Game(config);
 };
 
 export default shooterGame;

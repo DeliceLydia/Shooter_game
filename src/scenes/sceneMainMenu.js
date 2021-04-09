@@ -5,7 +5,6 @@ import SprBtnPlayDown from '../assets/sprBtnPlayDown.png';
 import SprBtnRestart from '../assets/sprBtnRestart.png';
 import SprBtnRestartHover from '../assets/sprBtnRestartHover.png';
 import SprBtnRestartDown from '../assets/sprBtnRestartDown.png';
-import Scores from '../assets/score.png';
 import SndBtnOver from '../assets/sndBtnOver.wav';
 import SndBtnDown from '../assets/sndBtnDown.wav';
 
@@ -15,7 +14,6 @@ export default class SceneMainMenu extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('scores', Scores);
     this.load.image('sprBtnPlay', SprBtnPlay);
     this.load.image('sprBtnPlayHover', SprBtnPlayHover);
     this.load.image('sprBtnPlayDown', SprBtnPlayDown);
@@ -60,10 +58,5 @@ export default class SceneMainMenu extends Phaser.Scene {
       align: 'center',
     });
     this.title.setOrigin(0.5);
-    const leaderboardButton = this.add.image(this.scale.width * 0.5, this.scale.height * 0.5 + 100, 'scores').setScale(0.4);
-    leaderboardButton.setInteractive({ useHandCursor: true });
-    leaderboardButton.on('pointerdown', () => {
-      this.scene.start('leaderboard');
-    });
   }
 }
