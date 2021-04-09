@@ -58,7 +58,7 @@ This project was about creating a shooter game using the Phaser library, when yo
 - Phaser
 - Javascript
 
-## Test with
+## Tested with
 
 - Jest
 
