@@ -1,44 +1,40 @@
 import Phaser from 'phaser';
+import Background from '../assets/background.png';
 import leadershipBoard from '../views/leadershipBoard';
 
 export default class SceneGameOver extends Phaser.Scene {
   constructor() {
     super({ key: 'SceneGameOver' });
-    this.isGameOver = false;
-    this.score = 1;
-    this.scoreText = null;
   }
 
+  // eslint-disable-next-line class-methods-use-this
   init({ score }) {
     localStorage.setItem('userScore', JSON.stringify(score));
   }
 
+  preload() {
+    this.load.image('background', Background);
+  }
+
   create() {
-    this.init();
-    this.drawScore();
-  }
+    const s = this.add.image(0, 0, 'background');
+    s.displayOriginX = 0;
+    s.displayOriginY = 0;
 
-  gameOver() {
-    this.isGameOver = true;
-    this.scene.start('SceneGameOver', { score: this.score });
-  }
+    const parentContainer = this.add.dom(0, 0, leadershipBoard());
+    parentContainer.displayOriginY = 0;
+    parentContainer.displayOriginX = 0;
 
-  // eslint-disable-next-line class-methods-use-this
-  drawScore() {
-    const text = 'Score: 1';
-    const style = {
-      font: '40px Roboto',
-      fill: '#FFFFFF',
-      align: 'center',
-      shadow: {
-        offsetX: 2,
-        offsetY: 2,
-        color: '#000',
-        blur: 2,
-        fill: true,
-      },
+    this.keys = {
+      r: this.input.keyboard.addKey('R'),
     };
-    this.scoreText = this.add.text(0, 0, text, style);
-  }
+
+    this.keys.r.on(
+      'down',
+      () => {
+        window.location.reload();
+      },
+      this,
+    );
   }
 }

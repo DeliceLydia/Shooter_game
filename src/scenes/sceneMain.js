@@ -13,6 +13,7 @@ import GunShip from '../models/gunship';
 export default class SceneMain extends Phaser.Scene {
   constructor() {
     super({ key: 'SceneMain' });
+    this.score = 1;
   }
 
   preload() {
@@ -33,6 +34,11 @@ export default class SceneMain extends Phaser.Scene {
     this.load.audio('sndExplode0', SndExplode0);
     this.load.audio('sndExplode1', SndExplode1);
     this.load.audio('sndLaser', SndLaser);
+  }
+
+  gameOver() {
+    this.isGameOver = true;
+    this.scene.start('SceneGameOver', { score: this.score });
   }
 
   create() {
@@ -102,6 +108,8 @@ export default class SceneMain extends Phaser.Scene {
           }
           enemy.explode(true);
           playerLaser.destroy();
+          this.gameOver();
+          this.drawScore();
         }
       },
     );
@@ -153,10 +161,10 @@ export default class SceneMain extends Phaser.Scene {
 
       enemy.update();
       if (
-        enemy.x < -enemy.displayWidth
-        || enemy.x > this.game.config.width + enemy.displayWidth
-        || enemy.y < -enemy.displayHeight * 4
-        || enemy.y > this.game.config.height + enemy.displayHeight
+        enemy.x < -enemy.displayWidth ||
+        enemy.x > this.game.config.width + enemy.displayWidth ||
+        enemy.y < -enemy.displayHeight * 4 ||
+        enemy.y > this.game.config.height + enemy.displayHeight
       ) {
         if (enemy) {
           if (enemy.onDestroy !== undefined) {
@@ -164,6 +172,7 @@ export default class SceneMain extends Phaser.Scene {
           }
 
           enemy.destroy();
+          this.score += 1;
         }
       }
     }
@@ -174,10 +183,10 @@ export default class SceneMain extends Phaser.Scene {
       laser.update();
 
       if (
-        laser.x < -laser.displayWidth
-        || laser.x > this.game.config.width + laser.displayWidth
-        || laser.y < -laser.displayHeight * 4
-        || laser.y > this.game.config.height + laser.displayHeight
+        laser.x < -laser.displayWidth ||
+        laser.x > this.game.config.width + laser.displayWidth ||
+        laser.y < -laser.displayHeight * 4 ||
+        laser.y > this.game.config.height + laser.displayHeight
       ) {
         if (laser) {
           laser.destroy();
@@ -190,15 +199,32 @@ export default class SceneMain extends Phaser.Scene {
       laser.update();
 
       if (
-        laser.x < -laser.displayWidth
-        || laser.x > this.game.config.width + laser.displayWidth
-        || laser.y < -laser.displayHeight * 4
-        || laser.y > this.game.config.height + laser.displayHeight
+        laser.x < -laser.displayWidth ||
+        laser.x > this.game.config.width + laser.displayWidth ||
+        laser.y < -laser.displayHeight * 4 ||
+        laser.y > this.game.config.height + laser.displayHeight
       ) {
         if (laser) {
           laser.destroy();
         }
       }
     }
+  }
+
+  drawScore() {
+    const text = 'Score: 1';
+    const style = {
+      font: '40px Roboto',
+      fill: '#FFFFFF',
+      align: 'center',
+      shadow: {
+        offsetX: 2,
+        offsetY: 2,
+        color: '#000',
+        blur: 2,
+        fill: true,
+      },
+    };
+    this.scoreText = this.add.text(0, 0, text, style);
   }
 }

@@ -1,7 +1,5 @@
 # Shooter_game
 
-## Description
-
 This project was about creating a shooter game using phaser library, the game
 have enemy and a player and each one of them has the ability to shoot when the player shoot enemy will get scores in the dashboard.
 
