@@ -11,6 +11,10 @@ This project was about creating a shooter game using the Phaser library, when yo
 ### Get scores
 ![screenshot](./scores.png)
 
+## Live demo
+
+Play the game live [here](https://delicelydia.github.io/Shooter_game/)
+
 ## Getting Started
 
 * Clone this repo
