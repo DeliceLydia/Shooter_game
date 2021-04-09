@@ -1,5 +1,4 @@
 /* eslint-disable */
-// eslint-disable-next-line import/no-unresolved, import/no-extraneous-dependencies.
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const path = require('path');
 
