@@ -42,7 +42,7 @@ const leadershipBoard = () => {
   innerContainer.classList.add('leaderboard-inner-container');
   container.append(innerContainer);
 
-  const title = document.createElement('h1');
+  const title = document.createElement('h2');
   title.textContent = 'Showing top 10 scorers';
   innerContainer.append(title);
 

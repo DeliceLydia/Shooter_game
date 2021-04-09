@@ -25,7 +25,6 @@ body {
   border-radius: 12px;
 }
 
-
 li {
   display: flex;
   align-items: center;
@@ -40,13 +39,12 @@ li:first-of-type {
   font-weight: 600;
 }
 
-
 .box {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-  
+
 h1 {
   margin: 0;
   padding-bottom: 10px;
@@ -110,7 +108,7 @@ h1 {
   margin: 0 auto;
 }
 
-h1 {
+h2 {
   margin: 0;
   font-size: 24px;
   text-align: center;
@@ -133,8 +131,4 @@ span {
   text-align: center;
   padding-top: 32px;
   font-size: 18px;
-}
-span {
-  display: block;
-  text-align: center;
 }
