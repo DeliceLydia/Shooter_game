@@ -1,5 +1,3 @@
-// eslint-disable-next-line import/no-unresolved
-import './stylesheets/style.css';
 import Phaser from 'phaser';
 import SceneMainMenu from '../scenes/sceneMainMenu';
 import SceneMain from '../scenes/sceneMain';
