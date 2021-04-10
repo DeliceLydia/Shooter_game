@@ -108,8 +108,6 @@ export default class SceneMain extends Phaser.Scene {
           }
           enemy.explode(true);
           playerLaser.destroy();
-          this.gameOver();
-          this.drawScore();
         }
       },
     );
@@ -127,6 +125,8 @@ export default class SceneMain extends Phaser.Scene {
         player.explode(false);
         player.onDestroy();
         laser.destroy();
+        this.gameOver();
+        this.drawScore();
       }
     });
   }
@@ -155,8 +155,8 @@ export default class SceneMain extends Phaser.Scene {
         this.player.setData('isShooting', false);
       }
     }
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < this.enemies.getChildren().length; i++) {
+
+    for (let i = 0; i < this.enemies.getChildren().length; i += 1) {
       const enemy = this.enemies.getChildren()[i];
 
       enemy.update();
@@ -177,8 +177,7 @@ export default class SceneMain extends Phaser.Scene {
       }
     }
 
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < this.enemyLasers.getChildren().length; i++) {
+    for (let i = 0; i < this.enemyLasers.getChildren().length; i += 1) {
       const laser = this.enemyLasers.getChildren()[i];
       laser.update();
 
@@ -193,8 +192,8 @@ export default class SceneMain extends Phaser.Scene {
         }
       }
     }
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < this.playerLasers.getChildren().length; i++) {
+
+    for (let i = 0; i < this.playerLasers.getChildren().length; i += 1) {
       const laser = this.playerLasers.getChildren()[i];
       laser.update();
 

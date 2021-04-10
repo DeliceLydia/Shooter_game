@@ -3,7 +3,7 @@ import getScores from './getScores';
 
 const updateScores = async ({ user, score }) => {
   try {
-    const res = await fetch(`${API}/games/e6FswbwKCQlYuZ8I567k/scores`, {
+    const res = await fetch(`${API}/games/CC3mqEjnBUCB3jkSJNI5/scores`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
