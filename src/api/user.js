@@ -1,4 +1,4 @@
-import { API } from '../constant';
+import API from '../constant';
 
 const createUser = async (userName) => {
   try {

@@ -1,9 +1,9 @@
-import { API } from '../constant';
+import API from '../constant';
 import getScores from './getScores';
 
 const updateScores = async ({ user, score }) => {
   try {
-    const res = await fetch(`${API}/games/CC3mqEjnBUCB3jkSJNI5/scores`, {
+    const res = await fetch(`${API}/games/0OWxoAsHYR7vt55rQE92/scores`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',

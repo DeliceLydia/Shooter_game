@@ -1,24 +1,29 @@
 import getScores from '../api/getScores';
 
-describe('testing getScores api endpoint', () => {
-  beforeEach(() => {
-    fetch.resetMocks();
-  });
+const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/0OWxoAsHYR7vt55rQE92/scores';
 
-  it('returns the users name and score as an array of object', async () => {
-    fetch.mockResponseOnce(
-      JSON.stringify({
-        result: [
-          {
-            name: 'hello',
-            score: 9,
-          },
-        ],
-      }),
-    );
+global.fetch = jest.fn(() => Promise.resolve({
+  ok: true,
+  json: () => Promise.resolve({ result: [{ user: 'John', score: 42 }] }),
+}));
 
-    const res = await getScores();
-    expect(res[0].name).toBe('hello');
-    expect(res[0].score).toBe(9);
-  });
+beforeEach(() => {
+  fetch.mockClear();
+});
+
+test('getScores uses fetch and gives back score data in a nested array', () => {
+  getScores(url)
+    .then(data => {
+      expect(data).toEqual([{ user: 'John', score: 42 }]);
+    });
+});
+
+test('getScores only calls fetch once', () => {
+  getScores(url);
+  expect(fetch).toHaveBeenCalledTimes(1);
+});
+
+test('getScores does not call another url', () => {
+  getScores(url);
+  expect(fetch).not.toHaveBeenCalledWith('https://google.com');
 });

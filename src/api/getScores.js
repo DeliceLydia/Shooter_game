@@ -1,10 +1,10 @@
-import { API } from '../constant';
+import API from '../constant';
 
 const sorter = (object) => object.sort((a, b) => (a.score > b.score ? -1 : 1));
 
 const getScores = async () => {
   try {
-    const res = await fetch(`${API}/games/CC3mqEjnBUCB3jkSJNI5/scores`, {
+    const res = await fetch(`${API}/games/0OWxoAsHYR7vt55rQE92/scores`, {
       headers: {
         'Content-type': 'application/json',
         Accept: 'application/json',
