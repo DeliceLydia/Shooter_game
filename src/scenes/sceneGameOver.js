@@ -7,8 +7,7 @@ export default class SceneGameOver extends Phaser.Scene {
     super({ key: 'SceneGameOver' });
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  init({ score }) {
+  static init({ score }) {
     localStorage.setItem('userScore', JSON.stringify(score));
   }
 
