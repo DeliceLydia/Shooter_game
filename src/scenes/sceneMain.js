@@ -117,6 +117,8 @@ export default class SceneMain extends Phaser.Scene {
         player.explode(false);
         player.onDestroy();
         enemy.explode(true);
+        this.gameOver();
+        this.drawScore();
       }
     });
 

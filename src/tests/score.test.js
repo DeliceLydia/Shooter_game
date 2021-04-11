@@ -1,6 +1,6 @@
 import getScores from '../api/getScores';
 
-const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/0OWxoAsHYR7vt55rQE92/scores';
+const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/ldQnWhU0zIUqeav3ulen/scores';
 
 global.fetch = jest.fn(() => Promise.resolve({
   ok: true,

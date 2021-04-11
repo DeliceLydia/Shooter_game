@@ -1,6 +1,6 @@
 # Shooter_game
 
-This project was about creating a shooter game using the Phaser library, when you start playing you will see that the game has many enemies as well as a player, each one of them can shoot when the player shoots the enemy will get scores in the dashboard.
+This project was about creating a shooter game using the Phaser library.
 
 ### Register
 ![screenshot](./game.png)
@@ -10,6 +10,27 @@ This project was about creating a shooter game using the Phaser library, when yo
 
 ### Get scores
 ![screenshot](./scores.png)
+
+## Game design
+
+### Rules of the game
+
+- As a player you need to make sure to shoot the enemy
+- Avoid to loose the game by being shot or hit by the enemy
+- Shoot the enemy as much as you can to increase your scores
+- When enemy shoot you the game will be over
+- Leaderboard will be displayed with scores when the game is over
+
+### Controls
+
+- After running your server you will be asked to provide your username
+- When you click start it will take you to the game world where adventure start from
+- Click play button you will be able to play
+- Enemies will shoot you and to shoot back you will press space key
+- To move up you will press [W]() key
+- To move down you will press [S]() key
+- To move left you will press [A]() key
+- To move right you will press [D]() key
 
 ## Live demo
 
@@ -38,18 +59,6 @@ Play the game live [here](https://delicelydia.github.io/Shooter_game/)
 * The server would usually start on port:3000
 
 * Enjoy the game
-
-## How to play
-
-- After running your server you will be asked to provide your username
-- When you click start it will take you to the game world where adventure start from
-- Click play button you will be able to play
-- Enemies will shoot you so to shoot you will press space key of your keyboard
-- To move up you will press W key
-- To move down you will press S key
-- To move left you will press A key
-- To move right you will press D key
-- As a player when you shoot enemy you will be scored as the game will be over
 
 ## How to run tests
 
