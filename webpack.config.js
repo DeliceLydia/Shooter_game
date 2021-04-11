@@ -1,3 +1,4 @@
+/* eslint-disable */
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const path = require('path');
 
@@ -15,7 +16,11 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'images',
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(ogg|mp3|wav|mpe?g)$/i,
+        loader: 'file-loader',
       },
       {
         test: /\.m?js$/,
@@ -37,3 +42,5 @@ module.exports = {
     }),
   ],
 };
+/* eslint-enable */
+// eslint-unable-next-line import/no-unresolved, import/no-extraneous-dependencies.
