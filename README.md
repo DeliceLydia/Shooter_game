@@ -1,6 +1,6 @@
 # Shooter_game
 
-This project was about creating a shooter game using the Phaser library.
+This is a sky a shooter game that was designed by using the Phaser library.
 
 ### Register
 ![screenshot](./game.png)
@@ -92,7 +92,7 @@ Play the game live [here](https://delicelydia.github.io/Shooter_game/)
 
 ## Acknowledgments
 
-Credits goes to [York computer solutions LLC](https://learn.yorkcs.com/category/tutorials/gamedev/phaser-3/build-a-space-shooter-with-phaser-3/) for the space shooter game it helped me to design mine
+Credits goes to [York computer solutions LLC](https://learn.yorkcs.com/category/tutorials/gamedev/phaser-3/build-a-space-shooter-with-phaser-3/) and [Open game art](https://opengameart.org/) for game design inspirations
 
 ## Show your support
 
